@@ -28,7 +28,7 @@
             Return pure file name from full path information. Ex. FullPath: "C:\Users\Public\myfilet.txt", RETURNS: "myfile.txt"
             </summary>
             <param name="FullPath">Full path </param>
-            <returns>File name with extension</returns>
+            <returns></returns>
         </member>
     </members>
 </doc>

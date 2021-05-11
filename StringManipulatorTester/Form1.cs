@@ -23,7 +23,7 @@ namespace StringManipulatorTester
             string teststring = StringManipulator.FindStringBetween2Strings(
                 "This is a bunch of instance words.",
                 "This is a",
-                "instance"); ;
+                "instance");
 
             if (teststring == " bunch of ")
                 MessageBox.Show("Passed");
