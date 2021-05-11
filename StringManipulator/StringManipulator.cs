@@ -9,7 +9,7 @@ namespace CarbonTechnologies
     {
         /// <summary>
         /// Finds the string in between.
-        /// Ex:
+        /// Ex1:
         /// mainstring = "This is a bunch of instance words.",
         /// firstring = "This is a",
         /// secondstring = "instance",
