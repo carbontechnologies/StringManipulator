@@ -30,7 +30,7 @@ namespace CarbonTechnologies
         /// <summary>
         /// Return pure file name from full path information. Ex. FullPath: "C:\Users\Public\myfilet.txt", RETURNS: "myfile.txt"
         /// </summary>
-        /// <param name="FullPath">Full path </param>
+        /// <param name="FullPath">Full path of the file</param>
         /// <returns>File name with extension</returns>
         public static string GetFileNameFromFullPath(string FullPath)
         {
