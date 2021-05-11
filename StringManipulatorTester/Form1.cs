@@ -41,6 +41,14 @@ namespace StringManipulatorTester
             else
                 MessageBox.Show("Failed");
 
+            teststring = StringManipulator.GetFileNameFromFullPath(@"C:\Users\Public\myfile.txt");
+
+            if(teststring == "myfile.txt")
+                MessageBox.Show("Passed");
+            else
+                MessageBox.Show("Failed");
+
+
 
 
         }

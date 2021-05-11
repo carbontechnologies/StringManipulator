@@ -3,8 +3,25 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>CarbonTechnologies</Company>
-    <Authors>Emrah Gingir</Authors>
+    <Company>Carbon Technologies</Company>
+    <Authors>Carbon Technologies</Authors>
+    <RepositoryUrl>https://github.com/carbontechnologies/StringManipulator</RepositoryUrl>
+    <Description>A library for string manipulation on C#.</Description>
+    <Copyright>Carbon Technologies</Copyright>
+    <PackageId>CarbonTechnologies.StringManipulator</PackageId>
+    <PackageLicenseFile>CarbonTechnologies_MIT_License.txt</PackageLicenseFile>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\emrah\Desktop\Business\CodeBase\StringManipulator\StringManipulator\StringManipulator.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Licenses\CarbonTechnologies_MIT_License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

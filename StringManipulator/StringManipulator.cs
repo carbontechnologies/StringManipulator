@@ -2,9 +2,11 @@
 
 namespace CarbonTechnologies
 {
+    /// <summary>
+    /// Main static class for string manipulation
+    /// </summary>
     public static class StringManipulator
     {
-
         /// <summary>
         /// Finds the string in between.
         /// Ex:
@@ -23,8 +25,21 @@ namespace CarbonTechnologies
             int lastindex = mainstring.IndexOf(secondstring);
 
             return mainstring.Substring(startingindex, lastindex - startingindex);
-                       
         }
+
+        /// <summary>
+        /// Return pure file name from full path information. Ex. FullPath: "C:\Users\Public\myfilet.txt", RETURNS: "myfile.txt"
+        /// </summary>
+        /// <param name="FullPath">Full path </param>
+        /// <returns>File name with extension</returns>
+        public static string GetFileNameFromFullPath(string FullPath)
+        {
+            int startingindex = FullPath.LastIndexOf(@"\");
+
+            return FullPath.Substring(startingindex).Replace(@"\","");
+
+        }
+
 
 
     }

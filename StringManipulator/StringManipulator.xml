@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StringManipulator</name>
+    </assembly>
+    <members>
+        <member name="T:CarbonTechnologies.StringManipulator">
+            <summary>
+            Main static class for string manipulation
+            </summary>
+        </member>
+        <member name="M:CarbonTechnologies.StringManipulator.FindStringBetween2Strings(System.String,System.String,System.String)">
+            <summary>
+            Finds the string in between.
+            Ex:
+            mainstring = "This is a bunch of instance words.",
+            firstring = "This is a",
+            secondstring = "instance",
+            RETURNS: " bunch of "
+            </summary>
+            <param name="mainstring">This is the string main string that will be searched</param>
+            <param name="firststring">First string (will be excluded from the returning string)</param>
+            <param name="secondstring">Second string (will be excluded from the returning string)</param>
+            <returns>Return the string between 1st and 2nd strings on mainstring</returns>
+        </member>
+        <member name="M:CarbonTechnologies.StringManipulator.GetFileNameFromFullPath(System.String)">
+            <summary>
+            Return pure file name from full path information. Ex. FullPath: "C:\Users\Public\myfilet.txt", RETURNS: "myfile.txt"
+            </summary>
+            <param name="FullPath">Full path </param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
