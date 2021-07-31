@@ -31,6 +31,9 @@ namespace StringManipulatorTester
                 MessageBox.Show("Failed");
 
 
+
+            MessageBox.Show(StringManipulator.RemoveTextFromString("This is a bunch of instance words.", "instance"));
+
             teststring = StringManipulator.FindStringBetween2Strings(
                 "123456789",
                 "234",
