@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,7 +10,7 @@
     <Copyright>Carbon Technologies</Copyright>
     <PackageId>CarbonTechnologies.StringManipulator</PackageId>
     <PackageLicenseFile>CarbonTechnologies_MIT_License.txt</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

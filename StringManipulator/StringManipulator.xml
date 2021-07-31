@@ -27,7 +27,15 @@
             <summary>
             Return pure file name from full path information. Ex. FullPath: "C:\Users\Public\myfilet.txt", RETURNS: "myfile.txt"
             </summary>
-            <param name="FullPath">Full path </param>
+            <param name="FullPath">Full path of the file</param>
+            <returns>File name with extension</returns>
+        </member>
+        <member name="M:CarbonTechnologies.StringManipulator.RemoveTextFromString(System.String,System.String)">
+            <summary>
+            Returns the text removed version of the main string."
+            </summary>
+            <param name="MainString">Main String</param>
+            /// <param name="StringToBeRemoved">The Text/String which will be removed from the Main String</param>
             <returns>File name with extension</returns>
         </member>
     </members>

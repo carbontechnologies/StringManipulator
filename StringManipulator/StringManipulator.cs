@@ -40,6 +40,17 @@ namespace CarbonTechnologies
 
         }
 
+        /// <summary>
+        /// Returns the text removed version of the main string."
+        /// </summary>
+        /// <param name="MainString">Main String</param>
+        /// /// <param name="StringToBeRemoved">The Text/String which will be removed from the Main String</param>
+        /// <returns>File name with extension</returns>
+        public static string RemoveTextFromString(string MainString, string StringToBeRemoved)
+        {
+            return MainString.Replace(StringToBeRemoved, "");
+        }
+
 
 
     }
