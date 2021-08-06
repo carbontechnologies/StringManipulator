@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace CarbonTechnologies
 {
@@ -36,7 +39,7 @@ namespace CarbonTechnologies
         {
             int startingindex = FullPath.LastIndexOf(@"\");
 
-            return FullPath.Substring(startingindex).Replace(@"\","");
+            return FullPath.Substring(startingindex).Replace(@"\", "");
 
         }
 
@@ -50,6 +53,75 @@ namespace CarbonTechnologies
         {
             return MainString.Replace(StringToBeRemoved, "");
         }
+
+
+
+
+
+
+        [DllImport("kernel32")]
+        private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
+        [DllImport("kernel32")]
+        private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
+
+        /// <summary>
+        /// Writes a Key-Value pair to a file
+        /// </summary>
+        /// <param name="FilePath">File path of the file. Creates if there is not file. You should have admin priviliges in the path</param>
+        /// <param name="Key">Key string paired for the value to be stored</param>
+        /// <param name="Value">String value to be stored</param>
+        /// <returns>Returns true if writing process is successful</returns>
+        public static bool WriteKeyToFile(string FilePath, string Key, string Value)
+        {
+            try
+            {
+                if (!File.Exists(FilePath))
+                {
+                    FileStream fileStream = File.Create(FilePath);
+                    fileStream.Close();
+                }
+
+                WritePrivateProfileString("LocalStrings", Key, Value, FilePath);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            if (Value == ReadKeyFromFile(FilePath, Key))
+                return true;
+            else
+                return false;
+        }
+
+
+
+        /// <summary>
+        /// Reads a Key-Value pair from a file
+        /// </summary>
+        /// <param name="FilePath">File path of the file. Returns null . You should have admin priviliges in the path</param>
+        /// <param name="Key">Key paired for the desired value</param>
+        /// <returns>String value for the Key. Returns "-1" if there is no file in path</returns>
+        public static string ReadKeyFromFile(string FilePath, string Key)
+        {
+            try
+            {
+                StringBuilder temp = new StringBuilder(255);
+
+                if (!File.Exists(FilePath))
+                    return "-1";
+
+                int i = GetPrivateProfileString("LocalStrings", Key, "", temp, 255, FilePath);
+                return temp.ToString();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
+
+
 
 
 

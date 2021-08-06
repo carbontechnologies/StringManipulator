@@ -26,34 +26,45 @@ namespace StringManipulatorTester
                 "instance"); ;
 
             if (teststring == " bunch of ")
-                MessageBox.Show("Passed");
+                MessageBox.Show("FindStringBetween2Strings: Passed");
             else
-                MessageBox.Show("Failed");
+                MessageBox.Show("FindStringBetween2Strings: Failed");
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+            StringManipulator.WriteKeyToFile(@"C:\mytrials3.txt", "Mykey", "MyValue");
 
-            MessageBox.Show(StringManipulator.RemoveTextFromString("This is a bunch of instance words.", "instance"));
-
-            teststring = StringManipulator.FindStringBetween2Strings(
-                "123456789",
-                "234",
-                "78");
-
-            if (teststring == "56")
-                MessageBox.Show("Passed");
+            if("MyValue" == StringManipulator.ReadKeyFromFile(@"C:\mytrials3.txt", "Mykey"))
+                MessageBox.Show("Key-Value Pair: Passed");
             else
-                MessageBox.Show("Failed");
+                MessageBox.Show("Key-Value Pair: Failed");
 
-            teststring = StringManipulator.GetFileNameFromFullPath(@"C:\Users\Public\myfile.txt");
 
-            if(teststring == "myfile.txt")
-                MessageBox.Show("Passed");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string teststring = "This is a bunch of instance words.";
+            string toberemoved = " instance";
+
+            string result = StringManipulator.RemoveTextFromString(teststring, toberemoved);
+
+            if (result == "This is a bunch of words.")
+                MessageBox.Show("RemoveTextFromString: Passed");
             else
-                MessageBox.Show("Failed");
+                MessageBox.Show("RemoveTextFromString: Failed");
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string teststring = StringManipulator.GetFileNameFromFullPath(@"C:\Users\Public\myfile.txt");
 
-
-
+            if (teststring == "myfile.txt")
+                MessageBox.Show("GetFileNameFromFullPath: Passed");
+            else
+                MessageBox.Show("GetFileNameFromFullPath: Failed");
         }
     }
 }
